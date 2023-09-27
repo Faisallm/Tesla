@@ -30,3 +30,8 @@ body {
         transform: translateY(3px);
     }
 }
+
+a {
+    /* remove the default underline */
+    text-decoration: none;
+}
