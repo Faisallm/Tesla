@@ -3,6 +3,8 @@ import styled from "styled-components";
 import modelS from "../assets/images/model-s.jpg";
 import downArrow from "../assets/images/down-arrow.svg";
 
+import Fade from "react-reveal/Fade";
+
 const Section = ({
   title,
   description,
@@ -12,16 +14,20 @@ const Section = ({
 }) => {
   return (
     <Wrap bgImage={backgroundImage}>
-      <ItemText>
-        <h1>{title}</h1>
-        <p>{description}</p>
-      </ItemText>
+      <Fade bottom>
+        <ItemText>
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </ItemText>
+      </Fade>
       <Buttons>
-        <ButtonGroup>
-          <LeftButton>{leftBtnText}</LeftButton>
-          {/* conditional rendering. */}
-          {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
-        </ButtonGroup>
+        <Fade bottom>
+          <ButtonGroup>
+            <LeftButton>{leftBtnText}</LeftButton>
+            {/* conditional rendering. */}
+            {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
+          </ButtonGroup>
+        </Fade>
         <DownArrow src={downArrow}></DownArrow>
       </Buttons>
     </Wrap>
